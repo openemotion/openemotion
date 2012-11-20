@@ -1,0 +1,37 @@
+{% extends "chat/layout.html" %}
+
+{% load i18n %}
+{% load humanize %}
+
+{% block js %}
+<!-- script type="text/javascript" src="/static/js/conv_list_reload.js"></script -->
+{% endblock %}
+
+{% block body %}
+<div>
+    {% if 1 %} <!-- session.logged_in_user -->
+    <button id="new_share" onclick="window.location='/conversations/new'">{% trans "New conversation" %}</button>
+    {% endif %}
+    <h1>{% trans "Latest sharings" %}</h1>
+</div>
+<div id="conversation_list">
+    {% if conversations %}
+    {% for conv in conversations %}
+    <div class="conversation_link">
+        <div class="title"><a href="/conversations/{{conv.id}}/{{conv.slug}}" >{{conv.subject}}</a></div>
+        {% if conv.status == "pending" %}
+        <div>{% trans "Shared by" %} <a href="/users/{{conv.requester}}">{{conv.requester}}</a>
+            {% trans "from (naturaltime)" %}{{conv.creation_date|naturaltime}} ({% trans "Pending responder" %})</div>
+        {% else %}
+        <div>{% trans "Shared by" %} <a href="/users/{{conv.requester}}">{{conv.requester}}</a>
+            {% trans "with (responder)" %}
+            <a href="/users/{{conv.responder}}">{{conv.responder}}</a>
+            {% trans "from (naturaltime)" %}{{conv.creation_date|naturaltime}}</div>
+        {% endif %}
+    </div>
+    {% endfor %}
+    {% else %}
+    <div><em>{% trans "Sadly, there is nothing here" %}</em></div>
+    {% endif %}
+</div>
+{% endblock %}

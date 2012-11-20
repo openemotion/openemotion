@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: openemotion\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-20 00:45+0200\n"
+"PO-Revision-Date: 2012-11-20 00:20+0200\n"
+"Last-Translator: Gavrie Philipson\n"
+"Language-Team: openemotion\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: templates/admin/base_site.html:4
+msgid "Django site admin"
+msgstr "ניהול האתר"
+
+#: templates/admin/base_site.html:7
+msgid "openemotion administration"
+msgstr "ניהול אתר לב פתוח"
+
+#: templates/chat/conversations.html:13
+msgid "New conversation"
+msgstr "שיתוף חדש"
+
+#: templates/chat/conversations.html:15
+msgid "Latest sharings"
+msgstr "שיתופים אחרונים"
+
+#: templates/chat/conversations.html:23 templates/chat/conversations.html:26
+msgid "Shared by"
+msgstr "שיתוף של"
+
+#: templates/chat/conversations.html:24 templates/chat/conversations.html:29
+msgid "from (naturaltime)"
+msgstr "מ"
+
+#: templates/chat/conversations.html:24
+msgid "Pending responder"
+msgstr "ממתין לתומך"
+
+#: templates/chat/conversations.html:27
+msgid "with (responder)"
+msgstr "מול"
+
+#: templates/chat/conversations.html:34
+msgid "Sadly, there is nothing here"
+msgstr "זה עצוב מאד, אבל אין פה כלום"

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    {% block css %}{% endblock %}
+  </head>
+  <body>
+    <div id="header">
+      <a href="/"><img src="/static/images/logo-70.png"></a>
+      <div id="links">
+        <a href="/terms">תנאי שימוש</a> |
+        <a href="/faq">שאלות נפוצות</a> |
+        <a href="/contact">צור קשר</a>
+        <div id="login-links">
+        {% if session.logged_in_user %}
+          <span>מחובר כ-</span><a href="/profile/{{session.logged_in_user}}">{{session.logged_in_user}}</a> |
+          <a href="/logout?goto={{request.url|urlencode}}">התנתק</a>
+        {% else %}
+          <a href="/register?goto={{request.url|urlencode}}">הרשמה</a> |
+          <a href="/login?goto={{request.url|urlencode}}">כניסה</a>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+    {% block body %}{% endblock %}
+    <script type="text/javascript" src="/static/js/jquery-1.8.2.js"></script>
+    {% block js %}{% endblock %}
+  </body>
+</html>

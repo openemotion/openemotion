@@ -1,2 +1,1 @@
-openemotion
-===========
+openemotion django version.
